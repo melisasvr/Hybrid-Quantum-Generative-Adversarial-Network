@@ -3,7 +3,7 @@
 A Python implementation of a hybrid quantum-classical Generative Adversarial Network (QGAN) designed for synthetic tabular data generation. Built using **PennyLane** and **Autograd (NumPy)**, this framework embeds continuous latent noise into a Parameterized Quantum Circuit (PQC) generator while training against a classical discriminator to generate realistic low-dimensional distributions without deep learning framework overhead (such as PyTorch or TensorFlow).
 
 ---
-
+```
 ## Architecture Overview
 +------------------------+
                       |   Latent Noise Vector  |
@@ -27,7 +27,7 @@ v
 +-----------+------------+
 | Real / Synthetic Score |
 +------------------------+
-
+```
 
 * **Generator (Quantum):** Uses a $4$-qubit Parameterized Quantum Circuit (PQC) with $4$ rotational layers (`qml.RY`) and cyclic entangling gates (`CNOT`). Data expectation values are evaluated using Pauli-Z measurements ($\langle Z \rangle$), outputting values bounded within $[-1, 1]$.
 * **Discriminator (Classical):** A lightweight logistic regression layer built from scratch using PennyLane's Autograd engine.
